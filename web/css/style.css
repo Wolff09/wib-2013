@@ -1,206 +1,121 @@
-/*
-	COLORS
- 
-	Dark Blue 		#222438
-	Medium Blue		#69697A
-	Light Blue	 	#C5C3DE
-	Yellow			#FFB000
-	Red				#D92B00
-	
-*/
 
 body {
-	background: #222438;
+	text-align: center;
+	/* TODO: font */
 	font-family: Georgia, Times New Roman, Times, serif;
 	font-weight: bold;
 	font-size: 20px;
-	text-align: center;
-	/*visibility: hidden;*/
 }
 
-/*h1 {
-	font-size: 120px;
-	font-weight: normal;
-	margin: 0;
-	font-family: 'Luckiest Guy',Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,Gadget,sans-serif;
-	text-transform: uppercase;
-	color: #FFB000;
-	text-shadow: 0 2px 1px #000;
-	line-height: .8;
-}
-
-h2 {
-	font-size: 150px;
-	font-weight: normal;
-	margin: 0;
-	color: #FFB000;
-	padding: 60px;
-	text-shadow: 0 2px 1px #000;
-	font-family: 'Luckiest Guy',Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,Gadget,sans-serif;
-	text-transform: uppercase;
-}
-
-h3 {
-	font-size: 60px;
-	font-weight: normal;
-	margin: 0;
-	color: #FFB000;
-	text-shadow: 0 2px 1px #000;
-	font-family: 'Luckiest Guy',Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,Gadget,sans-serif;
-	text-transform: uppercase;	
-}*/
-
-/*p {	width: 80%; margin: 20px auto; text-shadow: 0 2px 1px #000; color: #C5C3DE; color: black; }
-a, a:visited { color: #D92B00; font-weight: bold; font-style: italic; }
-ul { list-style: none; }*/
-
-
-#examples-1 { overflow: hidden; }
-#fly-it { position: relative; }
-#scale-it { width: 500%; margin: 0px -200%; padding: 0; }
-
-#examples-pin { position: relative; width: 100%; height: 600px; overflow: hidden; margin-bottom: -200px; }
-.pin-frame { position: absolute; width: 100%; height: 100%; overflow: hidden; }
-.pin-frame h2 { margin-top: 120px; }
-#pin-frame-slide { background: #D92B00; margin-left:-100%; }
-#pin-frame-wipe  { background: #FFB000; top:100%; }
-#pin-frame-wipe h2  { color: #D92B00; }
-#pin-frame-bounce  { background: #222438; }
-#pin-frame-color  { background: #222438; }
-#pin-frame-unpin  { top:100%; }
-
-#examples-2 { z-index: 9999; width: 100%; height: 100%; overflow: hidden; }
-#fling-it, #move-it { position: relative; }
-#examples-parallax {
-	padding-top: 200px;
-	height: 800px;
-	margin-bottom: -600px;
-	overflow: hidden;
-}
-#parallax-it {
-	padding: 0;
-	font-size: 80px;
-	position: relative;
-}
-
-#parallax-it-left {
-	position: relative;
-	font-size: 120px;
-	left: -160px;
-	color: #C5C3DE;
-	opacity: 0.5;
-	-moz-opacity: 0.5;
-	filter:alpha(opacity=5);
-	overflow: hidden;
-}
-
-#parallax-it-right {
-	position: relative;
-	font-size: 160px;
-	left: 80px;
-	color: #C5C3DE;
-	opacity: 0.25;
-	-moz-opacity: 0.25;
-	filter:alpha(opacity=2.5);
-	overflow: hidden;
-	width: 900px;
-}
-
-
-/***** my changes *****/
-
-h1, h2, h3 {
-	font-weight: normal;
-	margin: 0;
-	font-family: 'Luckiest Guy',Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,Gadget,sans-serif;
-	/*text-transform: uppercase;*/
-	color: #FFB000;
-	text-shadow: 0 2px 1px #000;
-}
-
-p {}
-a {}
-
-body.js #head-wrapper {
-	position: absolute;
-	top: 0;
+#bg {
+	background: url("../img/bg.jpg");
+	background-size: 100%;
+	position: fixed;
 	left: 0;
-	z-index: 3;
+	top: 0;
 	width: 100%;
-	text-align: center;
-	padding-top: .5em;
-	background: rgb(4, 89, 1);
-	height: 140px;
-	background: url("../img/head.png"); /* größeres und besseres bg-img, mittig */
+	height: 100%;
 }
 
-body.js #head-wrapper h1 { font-size: 80px; }
 
-body.js #navi-wrapper {
-	position: absolute;
+/*************************************** bottom bar ***************************************/
+
+body.js #bottom-bar {
+	position: fixed;
 	bottom: 0;
 	width: 100%;
-	z-index: 2;
-	height: 110px;
-	background: url("../img/navi.png");
+	height: 135px;
+	z-index: 100;
+	background-image: url("../img/footer.png");
 }
 
-body.js #navi-wrapper #navi-link-wrapper {
-	position: absolute;
-	width: 100%;
-	bottom: 0px;
-	height: 1.5em;
-}
-
-body.js #navi-wrapper #navi-link-wrapper a {
+body.js #bottom-bar #callout {
+	height: 100px;
+	line-height: 140px; /* must be adapted due to strange font behaviour */
 	font-family: 'Luckiest Guy',Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,Gadget,sans-serif;
-	font-size: 1.1em;
-	/*font-style: italic;*/
-	padding: 0 .5em;
-	color: #F92B44;
-	color: #512A0A;
-	text-shadow: 1px 1px 10px #BE7B6F;
+	font-size: 110px;
+	color: #FFB000;
+	/*color: #512A0A;*/
+}
+
+body.js #bottom-bar #navi {
+	height: 35px;
+}
+
+body.js #bottom-bar #navi a {
+	line-height: 45px;
+	font-family: 'Luckiest Guy',Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,Gadget,sans-serif;
+	font-size: 25px;
 	text-decoration: none;
+	color: #FFB000;
+	padding: 0 .4em;
 }
 
-body.js #navi-wrapper #navi-link-wrapper a:hover {
-	text-shadow: 1px 1px 15px #F94;
+body.js #bottom-bar #navi a:hover {
+	color: #F92B44;
 }
 
-body.js #content-wrapper {
-	position: absolute;
-	overflow-x: hidden;
-	overflow-y: scroll;
-	height: 100%;
+body.js #footer1, body.js #footer2, body.js #footer3, body.js #footer4 {
+	z-index: 75;
+	position: fixed;
+	bottom: -100px;
 	width: 100%;
+	height: 400px;
+	background-repeat-y: no-repeat;
 }
+body.js #footer1 { background: url("../img/footer1.png"); }
+body.js #footer2 { background: url(""); }
+body.js #footer3 { background: url(""); }
+body.js #footer4 { background: url(""); }
 
-body.js #content-wrapper h1, body.js #content-wrapper h2 body.js, #content-wrapper h3 { color: #597B44; }
-body.js #content-wrapper h1 { font-size: 2.5em; }
-body.js #content-wrapper h2 { font-size: 2em; }
-body.js #content-wrapper h3 { font-size: 1.5em; }
+/************************************** main content **************************************/
+
+body.js {
+	/*position: fixed;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;*/
+}
 
 body.js .box {
 	position: absolute;
+	top: 0px;
+	left: 0px;
 	width: 100%;
-	height: 100%;
-	top: 0;
-	overflow: auto;
-	z-index: 1;
+	height: auto;
+	/*overflow-y: scroll;*/
+	/*overflow-x: hidden;*/
+	border-bottom: 200px solid transparent;
+	/*box-sizing: border-box;*/
+	/*min-height: 100%;*/
 }
-
-body.js #no1 { left: 0%; }
-body.js #no2 { left: 100%; }
-body.js #no3 { left: 200%; }
-body.js #no4 { left: 300%; }
-body.js #no5 { left: 400%; }
 
 body.js .box .inner {
-	display: inline-block;
-	max-width: 30em;
-	margin-top: 190px;
-	margin-bottom: 150px;
-	padding: 1.5em;
-	background: #512A0A; /* Holzschild image */
-	overflow: auto;
+	max-width: 40em;
+	z-index: 10;
+	padding: 1px .4em 15px .4em;
+	margin: 30px auto;
+	border-radius: 50px;
+	box-shadow: 1px 1px 30px #512A0A;
+	/* TODO: background, font, font color */
+	background-color: rgba(200,200,200,.6);
+	/*background-color: rgba(81,42,10,.7);*/
+	background-color: rgba(170,119,10,.8);
+	color: #000;
+	/*font-family: 'Luckiest Guy',Impact,Haettenschweiler,"Franklin Gothic Bold",Charcoal,Gadget,sans-serif;*/
+	font-size: 16pt;
 }
+
+body.js .box .inner p {}
+body.js .box .inner a {}
+body.js .box .inner h1 {}
+body.js .box .inner h2 {}
+body.js .box .inner h3 {}
+
+/*body.js #no1.box { left: 0%; }
+body.js #no2.box { left: 100%; }
+body.js #no3.box { left: 200%; }
+body.js #no4.box { left: 300%; }
+body.js #no5.box { left: 400%; }*/
