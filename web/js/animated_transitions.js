@@ -18,35 +18,34 @@ var	isAnimating = false,
 	animationDefaultOutClass = 'pt-page-rotateOutNewspaper';
 
 function animated_transition(curr, next, inc, ouc) {
-	if (curr == next) return;
-	if (isAnimating) return false;
-	isAnimating = true;
+	if (!isAnimating && curr != next) {
+		isAnimating = true;
 
-	var $currPage = $(curr);
-	var $nextPage = $(next).addClass( 'pt-page-current' );
-	var outClass = ouc || animationDefaultOutClass;
-	var inClass = inc || animationDefaultInClass;
+		var $currPage = $(curr);
+		var $nextPage = $(next).addClass( 'pt-page-current' );
+		var outClass = ouc || animationDefaultOutClass;
+		var inClass = inc || animationDefaultInClass;
 
-	$currPage.addClass( outClass ).on( animEndEventName, function() {
-		$currPage.off( animEndEventName );
-		endCurrPage = true;
-		if( endNextPage ) {
+		$currPage.addClass( outClass ).on( animEndEventName, function() {
+			$currPage.off( animEndEventName );
+			endCurrPage = true;
+			if( endNextPage ) {
+				onEndAnimation( $currPage, $nextPage );
+			}
+		} );
+
+		$nextPage.addClass( inClass ).on( animEndEventName, function() {
+			$nextPage.off( animEndEventName );
+			endNextPage = true;
+			if( endCurrPage ) {
+				onEndAnimation( $currPage, $nextPage );
+			}
+		} );
+
+		if( !support ) {
 			onEndAnimation( $currPage, $nextPage );
 		}
-	} );
-
-	$nextPage.addClass( inClass ).on( animEndEventName, function() {
-		$nextPage.off( animEndEventName );
-		endNextPage = true;
-		if( endCurrPage ) {
-			onEndAnimation( $currPage, $nextPage );
-		}
-	} );
-
-	if( !support ) {
-		onEndAnimation( $currPage, $nextPage );
 	}
-
 }
 
 function onEndAnimation( $outpage, $inpage ) {
