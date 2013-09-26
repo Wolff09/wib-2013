@@ -201,3 +201,9 @@ html.no-js .box:last-child {
 	bottom: 0px;
 	/*width: 500px;*/
 }
+
+#adrian {
+	position: fixed;
+	top: -320px;
+	right: -280px;
+}
