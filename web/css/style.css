@@ -37,6 +37,7 @@ html #bottom-bar #callout {
 	font-size: 105px;
 	color: #FFB000;
 	/*color: #512A0A;*/
+	text-shadow: 0px 0px 4px #733010;
 }
 
 html #bottom-bar #navi {
@@ -49,6 +50,7 @@ html #bottom-bar #navi a {
 	font-size: 25px;
 	text-decoration: none;
 	color: #FFB000;
+	text-shadow: 0px 0px 4px #733010;
 	padding: 0 .4em;
 }
 
@@ -164,6 +166,8 @@ html .box .inner {
 html .box .inner p {}
 html .box .inner a {}
 html .box .inner h1, html .box .inner h2, html .box .inner h3 {
+	text-shadow: 2px 2px #ffb000;
+	text-shadow: 2px 2px #cc9000;
 	font-family: "Lobster",Haettenschweiler,"Franklin Gothic Bold",Charcoal,Gadget,sans-serif;
 }
 
@@ -187,4 +191,13 @@ html.no-js .pt-page {
 
 html.no-js .box:last-child {
 	border-bottom: 200px solid transparent;
+}
+
+/***************************************** stuff *****************************************/
+
+#pfand {
+	position: fixed;
+	left: -500px;
+	bottom: 0px;
+	/*width: 500px;*/
 }

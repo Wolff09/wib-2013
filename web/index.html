@@ -34,6 +34,8 @@
 		<div id="callout">Willkommen im Busch</div>
 	</div>
 
+	<img id="pfand" src="img/pfand.png">
+
 
 	<div class="pt-perspective">
 		<!-- Box1:  -->
@@ -156,6 +158,21 @@
 			active_box = next_box;
 		}
 
+		// animuations
+		windowWidth = $(window).width();
+		ani_len = windowWidth/1600 * 90;
+
+		timeline = new TimelineMax({repeat:-1, yoyo:true});
+		timeline.to( $("#pfand"), 1.5, {bottom: -15, ease:Sine.easeIn} );
+
+		timeline = new TimelineMax({repeat:-1});
+		timeline.to( $("#pfand"), ani_len, {left: windowWidth, ease:Linear.easeNone, repeatDelay:5} );
+
+
+		// timeline.append(TweenMax.to( $("#pfand"), 60, {left: 1600, ease: Back.easeOut} ));
+		// timeline = new TimelineLite();
+		// timeline.append(TweenMax.to( $("#pfand"), 1, {bottom: -150} ));
+
 //		function delayedTween(target, duration, vars) {
 //			return (new TimelineLite()).append(TweenMax.to(target, duration, vars));
 //		}
@@ -172,8 +189,8 @@
 //			});
 //		}
 //
-//		$(document).ready(function() {
-//			var controller = $.superscrollorama();
+		// $(document).ready(function() {
+			// var controller = $.superscrollorama();
 //			// my tweens
 //			// controller.addTween('#go-away-bushes');
 //			// loading screen (go away, bushes!)
