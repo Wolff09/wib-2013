@@ -18,7 +18,7 @@ var	isAnimating = false,
 	animationDefaultOutClass = 'pt-page-rotateOutNewspaper';
 
 function animated_transition(curr, next, inc, ouc) {
-	if (!isAnimating && curr != next) {
+	if (curr != next) {
 		isAnimating = true;
 
 		var $currPage = $(curr);
@@ -57,8 +57,11 @@ function onEndAnimation( $outpage, $inpage ) {
 
 function resetPage( $outpage, $inpage ) {
 	// TODO: the classes here must exactly match!
-	$outpage.attr('class', 'box pt-page');
-	$inpage.attr('class', 'box pt-page pt-page-current');
+	// $outpage.attr('class', 'box pt-page');
+	// $inpage.attr('class', 'box pt-page pt-page-current');
+
+	$(".pt-page").attr('class', 'box pt-page');
+	$(window.location.hash || "#no1").attr('class', 'box pt-page pt-page-current');
 }
 
 

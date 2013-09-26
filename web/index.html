@@ -152,11 +152,12 @@
 		var active_box = window.location.hash || "#no1";
 		$(active_box).addClass('pt-page-current');
 		function go_to(next_box) {
+			active_box = window.location.hash || "#no1";
 			/* See animated_transitions.js for further information on the class names available */
 			animated_transition(active_box, next_box,
 				/* animation in: */  'pt-page-rotateSidesIn pt-page-delay200',
 				/* animation out: */ 'pt-page-rotateSlideOut');
-			active_box = next_box;
+			// active_box = next_box;
 		}
 
 		// animuations
