@@ -177,9 +177,18 @@ html .box .inner h1, html .box .inner h2, html .box .inner h3 {
 	font-family: "Lobster",Haettenschweiler,"Franklin Gothic Bold",Charcoal,Gadget,sans-serif;
 }
 
-@media mobile {
+@media (max-width: 54em) {
+	html .box .inner {
+		/*font-size: 150%;*/
+		font-size: 1.5em;
+	}
+}
+/*@media screen and (max-width: 40em) {
 	html .box .inner { font-size: 150%; }
 }
+@media screen and (max-width: 40em) {
+	html .box .inner { font-size: 150%; }
+}*/
 
 /************************************** main content **************************************/
 
