@@ -149,7 +149,7 @@ html .box {
 html .box .inner {
 	max-width: 40em;
 	z-index: 10;
-	padding: 1px .4em 15px .4em;
+	padding: 1px 1.4em 15px 1.4em;
 	margin: 30px auto;
 	border-radius: 50px;
 	box-shadow: 1px 1px 30px #512A0A;
@@ -161,6 +161,11 @@ html .box .inner {
 	font-size: 15pt;
 	font-weight: normal;
 	font-family: "Lato",Haettenschweiler,"Franklin Gothic Bold",Charcoal,Gadget,sans-serif;
+	text-align: left
+}
+
+.inner > h1 {
+	text-align:center
 }
 
 @media (max-width: 54em) {
