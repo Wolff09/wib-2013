@@ -200,6 +200,13 @@ html .box .inner h1, html .box .inner h2, html .box .inner h3 {
 	text-shadow: 0px 0px 2px rgba(8,99,2,.5);
 }
 
+.nacktbus {
+	margin-left: 30px;
+}
+.nacktbus td, .nacktbus th {
+	padding: 0 0.5em;
+}
+
 /*@media screen and (max-width: 40em) {
 	html .box .inner { font-size: 150%; }
 }
