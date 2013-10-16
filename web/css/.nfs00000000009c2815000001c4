@@ -161,7 +161,7 @@ html .box {
 	left: 0px;
 	width: 100%;
 	height: auto;
-	border-bottom: 255px solid transparent;
+	border-bottom: 2550px solid transparent;
 }
 
 html .box .inner {
