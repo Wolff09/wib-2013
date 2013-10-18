@@ -216,9 +216,11 @@
 			else if (code == 40) { seq = seq + "b"; } // down
 			else if (code == 39) { seq = seq + "c"; } // right
 			else if (code == 37) { seq = seq + "d"; } // left
+			else if (code == 66) { seq = seq + "d"; } // b
+			else if (code == 65) { seq = seq + "e"; } // a
 			else if (code == 8) { seq = ""; }
 			
-			if (seq == "aabbdcdc"){
+			if (seq == "aabbdcdcde"){
 				$("#brbl").fadeIn("slow");
 				seq = "";
 			}
